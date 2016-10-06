@@ -12,30 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# VERSION 0.1.0
+# AUTHOR:         Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# DESCRIPTION:    zeiot/rpi-speedtest_exporter
+
 FROM resin/armv7hf-debian:jessie
 MAINTAINER Nicolas Lamirault <nicolas.lamirault@gmail.com>
 
 ENV PATH /go/bin:/usr/local/go/bin:$PATH
 ENV GOPATH /go
 
-RUN	apk add --no-cache \
-	ca-certificates
-
-COPY . /go/src/github.com/nlamirault/syno_exporter
-
-RUN set -x \
-	&& apk add --no-cache --virtual .build-deps \
-		go \
-		git \
-		gcc \
-		libc-dev \
-		libgcc \
-	&& cd /go/src/github.com/nlamirault/syno_exporter \
-	&& go build -o /usr/bin/syno_exporter . \
-	&& apk del .build-deps \
-	&& rm -rf /go \
-	&& echo "Build complete."
+ADD https://bintray.com/artifact/download/nlamirault/oss/speedtest_exporter-0.1.0_linux_arm /speedtest_exporter-0.1.0_linux_arm
+RUN mv /speedtest_exporter-0.1.0_linux_arm /speedtest_exporter && \
+    chmod +x /speedtest_exporter
 
 EXPOSE 9111
 
-ENTRYPOINT ["/syno_exporter"]
+ENTRYPOINT ["/speedtest_exporter"]
