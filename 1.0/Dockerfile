@@ -14,7 +14,7 @@
 
 # VERSION 0.1.0
 # AUTHOR:         Nicolas Lamirault <nicolas.lamirault@gmail.com>
-# DESCRIPTION:    zeiot/rpi-speedtest_exporter
+# DESCRIPTION:    zeiot/rpi-syno_exporter
 
 FROM resin/armv7hf-debian:jessie
 MAINTAINER Nicolas Lamirault <nicolas.lamirault@gmail.com>
@@ -22,10 +22,10 @@ MAINTAINER Nicolas Lamirault <nicolas.lamirault@gmail.com>
 ENV PATH /go/bin:/usr/local/go/bin:$PATH
 ENV GOPATH /go
 
-ADD https://bintray.com/artifact/download/nlamirault/oss/speedtest_exporter-0.1.0_linux_arm /speedtest_exporter-0.1.0_linux_arm
-RUN mv /speedtest_exporter-0.1.0_linux_arm /speedtest_exporter && \
-    chmod +x /speedtest_exporter
+ADD https://bintray.com/artifact/download/nlamirault/oss/syno_exporter-0.1.0_linux_arm /syno_exporter-0.1.0_linux_arm
+RUN mv /syno_exporter-0.1.0_linux_arm /syno_exporter && \
+    chmod +x /syno_exporter
 
 EXPOSE 9111
 
-ENTRYPOINT ["/speedtest_exporter"]
+ENTRYPOINT ["/syno_exporter"]
