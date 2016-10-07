@@ -12,11 +12,11 @@ dependencies:
     - "~/docker"
   override:
     - docker info
-    - docker build -t zeiot/speedtest_exporter:1.0 1.0
+    - docker build -t zeiot/syno_exporter:1.0 1.0
 
 test:
   override:
-    - docker run zeiot/speedtest_exporter:1.0 speedtest-exporter-1.0 ; sleep 10 ; docker stop speedtest-exporter-1.0
+    - docker run zeiot/syno_exporter:1.0 syno-exporter-1.0 ; sleep 10 ; docker stop syno-exporter-1.0
 
 #deployment:
 #  hub:

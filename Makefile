@@ -14,7 +14,7 @@
 
 APP=zeiot
 NAMESPACE=$(APP)
-IMAGE=rpi-speedtest_exporter
+IMAGE=rpi-syno_exporter
 
 NO_COLOR=\033[0m
 OK_COLOR=\033[32;01m
