@@ -3,6 +3,8 @@
 * Master : [![Circle CI](https://circleci.com/gh/zeiot/rpi-syno_exporter/tree/master.svg?style=svg)](https://circleci.com/gh/zeiot/rpi-syno_exporter/tree/master)
 * Develop : [![Circle CI](https://circleci.com/gh/zeiot/rpi-syno_exporter/tree/develop.svg?style=svg)](https://circleci.com/gh/zeiot/rpi-syno_exporter/tree/develop)
 
+DEPRECATED. See [snmp_exporter](https://github.com/prometheus/snmp_exporter).
+
 Docker image of [syno_exporter][] to use on a [Raspberry PI][].
 
 Configure binfmt-support on the Docker host (works locally or remotely, i.e: using boot2docker):
